@@ -1,0 +1,370 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(45deg, #ff6b81, #ffcc00, #00bcd4, #8e24aa);
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-x: hidden;
+    cursor: url('https://www.example.com/cursor.png'), auto; /* Custom Cursor */
+    scroll-behavior: smooth; /* Smooth Scroll Effect */
+}
+
+/* Animation for background */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-grow: 1.5;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Left Section */
+.left-section {
+    flex: 0 0 30%;  /* 30% of the width */
+    background: #215e59;
+    color: black;
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.left-section:hover {
+    transform: translateX(-10px);
+    box-shadow: 15px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.left-section img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-section img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.left-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    transform: translateY(-10px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.left-section h1:hover {
+    color: #ffcc00;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+}
+
+.left-section .designation {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Section */
+.right-section {
+    flex: 0 0 70%;  /* 70% of the width */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:black;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    animation: fadeIn 1.5s ease;
+}
+
+.right-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #c15f9b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.right-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.right-section p:hover {
+    color: #333;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.resume-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume-link:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+    border-top: 3px solid #c6a831;
+}
+
+footer .footer-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+footer .footer-item:hover {
+    transform: scale(1.1);
+}
+
+footer a {
+    color: #00acee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #00ffd0;
+}
+
+footer .social-icons a img {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-section, .right-section {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+}
+
+/* Download Resume Button */
+.download-resume-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #005f99;
+    color: #d05050;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.download-resume-btn:hover {
+    background-color: #9bc0d7;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Flip Animation for Projects Section */
+.project-card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    margin: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.project-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.project-card:hover .project-card-inner {
+    transform: rotateY(180deg);
+}
+
+.project-card-front,
+.project-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.project-card-front {
+    background: #284665;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.project-card-back {
+    background: #ffcc00;
+    color: rgb(208, 96, 96);
+    transform: rotateY(180deg);
+    padding: 20px;
+}
+
+/* Fade-in and Scale Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Reveal for Section Elements */
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    animation: reveal 1s ease-out;
+}
+
+/* Hover Effects on Links and Buttons */
+a, .resume-link, .download-resume-btn {
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a:hover, .resume-link:hover, .download-resume-btn:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect on social media icons */
+.social-icons a img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.3);
+    filter: brightness(1.2);
+}
+
+/* Animations for h1, h2, p */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2, p {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+h2 {
+    transition: color 0.3s ease;
+}
+
+h2:hover {
+    color: #ffcc00;
+}
+
+p {
+    font-style: italic;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+p:hover {
+    transform: scale(1.05);
+    font-size: 1.2rem;
+}
